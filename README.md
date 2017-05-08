@@ -21,7 +21,7 @@ apt-get install -y docker-engine
 
 apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 
-kubeadm init --apiserver-advertise-address <<Public IP of Master>>
+kubeadm init --apiserver-advertise-address ##Public IP of Master##
 
 ###### Note the join token produced by above command ##########
 ###### eg., kubeadm join --token dcb2ea.b8b831b261979998 10.0.0.228:6443 ############
@@ -49,7 +49,7 @@ kubectl create -f services/java.yml
 ########### To deploy database MySql (backend) ############
 
 # Deploying a MySql db in another pod
-kubectl run mysql --image=navyateja/mysql --env='MYSQL_ROOT_PASSWORD=Welcome@1234' --port=3306 --label='mysql'
+kubectl run mysql --image=navyateja/mysql --env='MYSQL_ROOT_PASSWORD=Welcome@1234' --port=3306
 
 # Creating a service on port 30306
 ##### mysql.yml is a configuration file for creating a service
