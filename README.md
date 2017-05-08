@@ -21,7 +21,7 @@ apt-get install -y docker-engine
 
 apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 
-kubeadm init --apiserver-advertise-address <Public IP of Master>
+kubeadm init --apiserver-advertise-address <<Public IP of Master>>
 
 ###### Note the join token produced by above command ##########
 ###### eg., kubeadm join --token dcb2ea.b8b831b261979998 10.0.0.228:6443 ############
@@ -38,7 +38,7 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 
 # Deploys a java app in a pod
 
-kubectl run java --image=navyateja/java-appku --port=4040 --label='app=java'
+kubectl run java --image=navyateja/java-appku --port=4040
 
 # Creating a service 
 ##### java.yml is a configuration file for creating a service
