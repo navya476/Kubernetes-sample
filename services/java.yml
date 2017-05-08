@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: java
+  name: java
+  namespace: default
+spec:
+  type: NodePort
+  ports:
+  - port: 8080 
+    protocol: TCP
+    nodePort: 30095
+  selector:
+    app: java

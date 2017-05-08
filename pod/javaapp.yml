@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: java
+  labels:
+    app: web
+spec:
+  containers:
+    - name: java-app
+      image: navyateja/java-appk
+      ports:
+        - containerPort: 8080
+    - name: mysql
+      image: navyateja/mysql
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: Welcome@1234
+      ports:
+        - containerPort: 3306
