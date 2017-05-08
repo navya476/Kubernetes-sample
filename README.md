@@ -38,7 +38,7 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 
 # Deploys a java app in a pod
 
-kubectl run java --image=navyateja/java-appku --port=4040
+kubectl run java --image=navyateja/java-appku --port=8080
 
 # Creating a service 
 ##### java.yml is a configuration file for creating a service
