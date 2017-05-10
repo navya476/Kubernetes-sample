@@ -41,7 +41,9 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 kubectl run java --image=navyateja/java-appku --port=8080
 
 # Creating a service 
+
 ##### java.yml is a configuration file for creating a service
+
 kubectl create -f services/java.yml
 
 # verify the app running on http://PublicIP of Master or Node:30095#########
@@ -49,10 +51,13 @@ kubectl create -f services/java.yml
 ########### To deploy database MySql (backend) ############
 
 # Deploying a MySql db in another pod
+
 kubectl run mysql --image=navyateja/mysql --env='MYSQL_ROOT_PASSWORD=Welcome@1234' --port=3306
 
 # Creating a service on port 30306
+
 ##### mysql.yml is a configuration file for creating a service
+
 kubectl create -f services/mysql.yml
 
 
@@ -63,6 +68,8 @@ then use following commands.
 ########################################################
 
 sudo cp /etc/kubernetes/admin.conf $HOME/
+
 sudo chown $(id -u):$(id -g) $HOME/admin.conf
+
 export KUBECONFIG=$HOME/admin.conf
 
